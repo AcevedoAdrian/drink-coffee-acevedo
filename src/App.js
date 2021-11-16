@@ -1,15 +1,19 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
+import NavBar from './components/NavBar/NavBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Drink Coffee to write JSX code</h2>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <NavBar />
+        <header className="App-header">
+          <h2>Drink Coffee to write JSX code</h2>
+        </header>
+      </div>
+    )
+  }
 }
 
 export default App;
