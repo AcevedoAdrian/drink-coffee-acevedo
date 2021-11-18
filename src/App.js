@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import './App.css';
+import Header from './components/Header/Header';
+import ItemsListsContiner from './components/ItemListCotainer/ItemsListsContiner';
 import NavBar from './components/NavBar/NavBar';
 
 class App extends Component {
@@ -8,9 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <header className="App-header">
-          <h2>Drink Coffee to write JSX code</h2>
-        </header>
+        <Header title='DRINK COFFEE' />
+        <ItemsListsContiner title="Lista de Productos" />
       </div>
     )
   }
