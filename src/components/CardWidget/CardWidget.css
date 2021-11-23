@@ -1,17 +1,21 @@
-.a-card-widget{
-  position: relative;
+.card-widget{
+  display: flex;
+  cursor: pointer;
+  z-index: 10000;
+  column-gap: 0.8rem;
+}
+.card-widget a{
   text-decoration: none; 
-  color: #2b2620;
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.5s ease-in-out;
-  text-transform: uppercase;
 }
-.a-card-widget .fas:hover{
-  color: #744407;
+
+.card-widget .fas:hover{
+  color: #bc9667;
   text-decoration: none;
 }
 .fas{
   font-size: 1.5rem;
-  color: #af6c13; 
+  color: #f1f1f1; 
 }
