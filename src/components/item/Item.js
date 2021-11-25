@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCount from './ItemCount';
 import './Item.css'
 
-const Item = ({ id, name, tagline, img = '../../assets/img/coffee.png', stock }) => {
+const Item = ({ id, name, tagline, img = '../../assets/img/coffee.png', price, stock }) => {
   return (
     <div className="card" id={id}>
       <div className="card-image">
@@ -11,7 +11,7 @@ const Item = ({ id, name, tagline, img = '../../assets/img/coffee.png', stock })
       <div className="card-texts">
         <h3>{name}</h3>
         <p>{tagline}</p>
-        <span>{ }</span>
+        <span>{`$ ${price}`}</span>
       </div>
       <ItemCount stock={stock} initial={1} />
     </div>
