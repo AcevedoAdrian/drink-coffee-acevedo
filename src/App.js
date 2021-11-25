@@ -1,20 +1,20 @@
-import { Component } from 'react';
-import './App.css';
+import React from 'react';
+// Componentes propios
 import Home from './components/Home/Home';
 import ItemsListsContiner from './components/ItemListCotainer/ItemsListsContiner';
 import NavBar from './components/NavBar/NavBar';
 
-class App extends Component {
+// Estilos CSS
+import './App.css';
 
-  render() {
-    return (
-      <div className="App">
-        <NavBar />
-        <Home title='DRINK COFFEE' />
-        <ItemsListsContiner title="Lista de Productos" />
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <>
+      <NavBar />
+      <Home title='DRINK COFFEE' />
+      <ItemsListsContiner title="PRODUCTOS" />
+    </>
+  )
 }
 
 export default App;

@@ -37,14 +37,13 @@ const ItemCount = ({ stock, initial }) => {
 
   }
   return (
-    <div className="item-count">
-      <h3>Contador</h3>
+    <div className="card-add">
       <div className="item-count-container">
         <button className='item-button-decrease' onClick={HandleDecrease}>-</button>
         <input type="number" value={amount} onChange={handleChange} />
         <button className="item-button-increase" onClick={HandleIncrease}>+</button>
       </div>
-      <button onClick={stock > 0 ? HandlerAdd : null} disabled={stock > 0 ? false : true}> Agregar Carrito</button>
+      <button className="btn-card-add" onClick={stock > 0 ? HandlerAdd : null} disabled={stock > 0 ? false : true} > Agregar Carrito</button>
       <p> {msj}</p>
     </div>
   );

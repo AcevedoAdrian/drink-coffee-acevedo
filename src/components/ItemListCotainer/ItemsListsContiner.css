@@ -1,15 +1,22 @@
 .secction-items-lists {
-  display: flex;
-  flex-direction: column;
   background-color: #f1f1f1;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
+  margin: auto;
+	padding: 40px 0;
   
+}
+.container{
+  display: grid;
+	grid-template-rows: auto auto;
+	gap: 20px;
+  align-items: center;
+  justify-items: center;
 }
 .h2-items-lists{
   font-size: 2rem;
   color: #bc9667;
   margin: 0;
   padding: 0;
-  align-items: center;
+  
 }
