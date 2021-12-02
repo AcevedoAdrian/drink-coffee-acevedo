@@ -32,7 +32,7 @@ const ItemsListsContiner = ({ title }) => {
   return (
     <section className='secction-items-lists'>
       <div className="container">
-        <h2 className='h2-items-lists'>{title}</h2>
+        <h2 className='h2-items-lists'>{title} {categoryId}</h2>
         {isLoading ? <Loader active inline='centered' /> : <ItemList products={products} />}
       </div>
     </section>
