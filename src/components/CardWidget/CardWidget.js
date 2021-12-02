@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './CardWidget.css';
 const CardWidget = (props) => {
   return (
     <div className="card-widget" >
-      <a href='#!'>
+      <Link to='/cart'>
         <i className="fas fa-coffee"></i>
-      </a>
+      </Link>
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button, Icon } from 'semantic-ui-react'
+
 
 const ItemCount = ({ stock, initial }) => {
 
@@ -43,7 +45,11 @@ const ItemCount = ({ stock, initial }) => {
         <input type="number" value={amount} onChange={handleChange} />
         <button className="item-button-increase" onClick={HandleIncrease}>+</button>
       </div>
-      <button className="btn-card-add" onClick={stock > 0 ? HandlerAdd : null} disabled={stock > 0 ? false : true} > Agregar Carrito</button>
+
+      <Button animated='fade' onClick={stock > 0 ? HandlerAdd : null} disabled={stock > 0 ? false : true}>
+        <Button.Content visible>Agregar al carrito</Button.Content>
+        <Button.Content hidden> <Icon name='shop' /></Button.Content>
+      </Button>
       <p> {msj}</p>
     </div>
   );

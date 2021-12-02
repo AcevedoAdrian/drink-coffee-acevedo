@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { Loader } from 'semantic-ui-react';
+const ItemDetailContainer = () => {
 
-const ItemDetailContainer = ({ id = 1 }) => {
-
+  const [isLoading, setIsLoading] = useState(true);
   const [product, setProduct] = useState([]);
-
+  const params = useParams();
   useEffect(() => {
     setTimeout(() => {
-      fetch(`https://api.punkapi.com/v2/beers/${id}`)
+      fetch(`https://api.punkapi.com/v2/beers/${params.id}`)
         .then(response => response.json())
         .then(response => {
           setProduct(response[0])
         })
+      setIsLoading(false)
     }, 2000)
-  }, [id])
+
+  }, [params])
 
   return (
     <div className="container-prorduct-detail">
-      <ItemDetail product={product} />
+      {isLoading ? <Loader active inline='centered' /> : <ItemDetail product={product} />}
     </div>
   )
 }
