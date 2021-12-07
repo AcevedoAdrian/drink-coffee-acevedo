@@ -1,31 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Icon } from 'semantic-ui-react'
+import { Button } from '@chakra-ui/react'
+// Estilos
 import './Item.css'
 
-const Item = ({ id, name, tagline, img = '../../assets/img/coffee.png', price }) => {
+const Item = (props) => {
+  const { id, name, tagline, image_url } = props.product;
+
   return (
     <div className="card" id={id}>
 
       <div className="card-image">
-        <img src={img} alt="" />
+        <img src={image_url} alt="" />
       </div>
-
       <div className="card-texts">
         <h3>{name}</h3>
         <p>{tagline}</p>
-        <span>{`$ ${price}`}</span>
+        <span>{`$ ${props.price}`}</span>
+        
         <Link to={`/item/${id}`} >
-          <Button icon labelPosition='left' color='brown'>
-            <Icon name='eye' />
+          <Button colorScheme='brand' >
             Ver Producto
           </Button>
+
         </Link>
       </div>
     </div>
   );
 }
+
 Item.defaultProps = {
-  img: '../../assets/img/logo.svg'
+  price: 300,
 }
 export default Item;

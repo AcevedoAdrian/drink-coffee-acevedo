@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import ItemList from '../ItemList/ItemList';
-import { Loader } from 'semantic-ui-react';
+import { Spinner } from '@chakra-ui/react'
+// Estilos
 import './ItemsListsContiner.css';
 const ItemsListsContiner = ({ title }) => {
   // State
@@ -33,7 +34,8 @@ const ItemsListsContiner = ({ title }) => {
     <section className='secction-items-lists'>
       <div className="container">
         <h2 className='h2-items-lists'>{title} {categoryId}</h2>
-        {isLoading ? <Loader active inline='centered' /> : <ItemList products={products} />}
+        {isLoading ? <Spinner size='xl' thickness='4px' />
+          : <ItemList products={products} />}
       </div>
     </section>
   );

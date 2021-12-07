@@ -6,8 +6,6 @@ import Home from './components/Home/Home';
 import ItemsListsContiner from './components/ItemListCotainer/ItemsListsContiner';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
-// Estilos CSS
-import './App.css';
 
 
 const App = () => {

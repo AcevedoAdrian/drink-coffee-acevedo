@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, Icon } from 'semantic-ui-react'
-
-
-const ItemCount = ({ stock, initial }) => {
+import { Button } from '@chakra-ui/react';
+import { BsCartPlus } from "react-icons/bs";
+import { IconButton } from '@chakra-ui/react'
+import { IoIosRemoveCircleOutline, IoIosAddCircleOutline } from "react-icons/io"
+const ItemCount = ({ stock, initial, onAdd }) => {
 
   // State initialization
   const [amount, setAmount] = React.useState(initial);
-  const [msj, setMsj] = React.useState('');
 
   //  Listen to the changes in the input
   const handleChange = (e) => {
@@ -31,26 +31,23 @@ const ItemCount = ({ stock, initial }) => {
   }
   // Button ADD product
   const HandlerAdd = () => {
-    if (amount > 0) {
-      setMsj(`Usted a seleccionado ${amount}`);
-    } else {
-      setMsj(`Tiene que seleccionar una cantidad`);
-    }
-
+    onAdd(amount)
   }
+
   return (
     <div className="card-add">
       <div className="item-count-container">
-        <button className='item-button-decrease' onClick={HandleDecrease}>-</button>
+        <IconButton aria-label='Search database' color="marron.900" bg="marron.200" onClick={HandleIncrease} icon={<IoIosAddCircleOutline />} />
+
         <input type="number" value={amount} onChange={handleChange} />
-        <button className="item-button-increase" onClick={HandleIncrease}>+</button>
+
+        <IconButton aria-label='Search database' color="marron.900" bg="marron.200" onClick={HandleDecrease} icon={<IoIosRemoveCircleOutline />} />
       </div>
 
-      <Button animated='fade' onClick={stock > 0 ? HandlerAdd : null} disabled={stock > 0 ? false : true}>
-        <Button.Content visible>Agregar al carrito</Button.Content>
-        <Button.Content hidden> <Icon name='shop' /></Button.Content>
+      <Button colorScheme='brand' leftIcon={<BsCartPlus />} variant='solid' onClick={stock > 0 ? HandlerAdd : null} disabled={stock > 0 ? false : true} >
+        Agregar al Carrito
       </Button>
-      <p> {msj}</p>
+
     </div>
   );
 }
