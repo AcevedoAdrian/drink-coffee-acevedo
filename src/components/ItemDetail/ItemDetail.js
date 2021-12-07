@@ -13,9 +13,12 @@ import './ItemDetail.css';
 const ItemDetail = ({ product }) => {
   const [isBuyButton, setIssBuyButton] = useState(true);
   const { name, tagline, image_url, attenuation_level, description, ibu } = product;
-  const [msj, setMsj] = React.useState({});
+  const [msj, setMsj] = useState({});
+  const [quantity, setQuantity] = useState(0)
 
   const onAdd = (amount) => {
+    setQuantity(amount)
+
     if (amount > 0) {
       setMsj(
         {
