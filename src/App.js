@@ -7,20 +7,22 @@ import ItemsListsContiner from './components/ItemListCotainer/ItemsListsContiner
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 
-
+import { CartProvider } from './context/CartContext';
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home title='DRINK COFFEE' />} />
-          <Route path="/products" element={<ItemsListsContiner title="PRODUCTOS" />} />
-          <Route path="/category/:categoryId" element={<ItemsListsContiner title="PRODUCTOS CON IBU IGUAL A " />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home title='DRINK COFFEE' />} />
+            <Route path="/products" element={<ItemsListsContiner title="PRODUCTOS" />} />
+            <Route path="/category/:categoryId" element={<ItemsListsContiner title="PRODUCTOS CON IBU IGUAL A " />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </>
   )
 }

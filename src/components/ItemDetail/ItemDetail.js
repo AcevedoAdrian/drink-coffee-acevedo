@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import { Button } from '@chakra-ui/react';
@@ -8,25 +8,31 @@ import {
   Stack
 } from '@chakra-ui/react'
 import './ItemDetail.css';
+import { CartConetext } from '../../context/CartContext'
 
 
 const ItemDetail = ({ product }) => {
+  const { addItem } = useContext(CartConetext);
+
   const [isBuyButton, setIssBuyButton] = useState(true);
   const { name, tagline, image_url, attenuation_level, description, ibu } = product;
   const [msj, setMsj] = useState({});
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(0);
 
   const onAdd = (amount) => {
-    setQuantity(amount)
 
     if (amount > 0) {
+
+      setQuantity(amount);
+      addItem(product, amount);
+      setIssBuyButton(false);
       setMsj(
         {
           description: `Usted a seleccionado ${amount}`,
           type: "success"
         }
       );
-      setIssBuyButton(false);
+
     } else {
       setMsj(
         {
