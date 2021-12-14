@@ -14,10 +14,10 @@ export const CartProvider = ({ children }) => {
       setCart(
         [...cartItems, {
           id: item.id,
-          name: item.name,
-          img: item.image_url,
-          tag: item.tagline,
-          price: item.ibu,
+          brand: item.brand,
+          img: item.img,
+          weight: item.weight,
+          price: item.precie,
           quantity
         }]
       )
@@ -54,6 +54,10 @@ export const CartProvider = ({ children }) => {
     setCart(updatedCart)
   }
 
+  const getTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+  }
+
   return (
     <CartConetext.Provider value={
       {
@@ -63,7 +67,8 @@ export const CartProvider = ({ children }) => {
         removeItem,
         clearCart,
         isInCart,
-        getTotalItems
+        getTotalItems,
+        getTotalPrice
       }
     }>
       {children}

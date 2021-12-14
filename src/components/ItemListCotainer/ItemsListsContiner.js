@@ -1,39 +1,60 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import ItemList from '../ItemList/ItemList';
-import { Spinner } from '@chakra-ui/react'
+import { Spinner } from '@chakra-ui/react';
+// FIREBASE
+import db from '../../firebase/firebaseConfig'
+import { collection, query, where, getDocs } from 'firebase/firestore';
 // Estilos
 import './ItemsListsContiner.css';
 const ItemsListsContiner = ({ title }) => {
   // State
   const [products, setProducts] = useState([]);
-  const { categoryId } = useParams();
+  const { category } = useParams();
   const [isLoading, setIsLoading] = useState(true);
 
-  // Effect
+
+  const getAllProducts = async () => {
+    const response = query(collection(db, 'products'));
+    const items = [];
+    const querySnapshot = await getDocs(response);
+    querySnapshot.forEach((doc) => {
+      items.push({ ...doc.data(), id: doc.id });
+    });
+    setProducts(items);
+  };
+
+ 
+
+  const getProductsCategory = async (category) => {
+    const response = query(
+      collection(db, 'products'),
+      where('category', '==', category)
+    );
+    const items = [];
+    const querySnapshot = await getDocs(response);
+    querySnapshot.forEach((doc) => {
+      items.push({ ...doc.data(), id: doc.id });
+    });
+    setProducts(items);
+  };
+
   useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      fetch('https://api.punkapi.com/v2/beers')
-        .then(response => response.json())
-        .then(data =>
-          (categoryId)
-            ? setProducts(data.filter(item => item.ibu === parseInt(categoryId)))
-            : setProducts(data)
 
-        )
-        .catch(error => console.log(error));
-      setIsLoading(false);
+    if (category) {
+      getProductsCategory(category);
+    } else {
+      getAllProducts();
+    }
+    setIsLoading(false);
 
-    }, 2000);
+  }, [category]);
 
-
-  }, [categoryId]);
 
   return (
     <section className='secction-items-lists'>
       <div className="container">
-        <h2 className='h2-items-lists'>{title} {categoryId}</h2>
+        <h2 className='h2-items-lists'>{title} {category}</h2>
         {isLoading ? <Spinner size='xl' thickness='4px' />
           : <ItemList products={products} />}
       </div>

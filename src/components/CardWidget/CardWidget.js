@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
-import { CartConetext } from '../../context/CartContext'
+import { Link } from 'react-router-dom';
+
+import { CartConetext } from '../../context/CartContext';
+
 import { BsCart3 } from "react-icons/bs";
 import { Icon } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
 import { Badge } from '@chakra-ui/react'
 
-
 import './CardWidget.css';
+
 const CardWidget = () => {
+
   const { getTotalItems } = useContext(CartConetext);
-  
 
   return (
     <div className="card-widget">

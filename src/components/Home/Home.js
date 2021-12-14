@@ -4,14 +4,7 @@ import './Home.css'
 import bgImage from '../../assets/img/home.jpg'
 
 const Home = ({ title }) => {
-  // return (
-  //   <section className='home'>
-  //     <div className='home-text'>
-  //       <h1>{title}</h1>
-  //       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt asperiores nihil, reprehenderit, unde repellat quasi repudiandae architecto cumque tempora labore, magni quo accusantium ab quia distinctio vero laboriosam molestias vitae!r</p>
-  //     </div>
-  //   </section>
-  // );
+
 
   return (
     <Box h="100vh"

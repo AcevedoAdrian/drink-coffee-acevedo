@@ -5,21 +5,21 @@ import { Button } from '@chakra-ui/react'
 import './Item.css'
 
 const Item = (props) => {
-  const { id, name, tagline, image_url } = props.product;
+  const { id, brand, region, img, precie } = props.product;
 
   return (
     <div className="card" id={id}>
 
       <div className="card-image">
-        <img src={image_url} alt="" />
+        <img src={img} alt="" />
       </div>
       <div className="card-texts">
-        <h3>{name}</h3>
-        <p>{tagline}</p>
-        <span>{`$ ${props.price}`}</span>
-        
+        <h3>{brand}</h3>
+        <p>{region}</p>
+        <span >{`$ ${precie}`}</span>
+
         <Link to={`/item/${id}`} >
-          <Button colorScheme='brand' >
+          <Button colorScheme='brand' mt='6' >
             Ver Producto
           </Button>
 
@@ -29,7 +29,4 @@ const Item = (props) => {
   );
 }
 
-Item.defaultProps = {
-  price: 300,
-}
 export default Item;
