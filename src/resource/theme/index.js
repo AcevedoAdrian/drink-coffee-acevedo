@@ -11,7 +11,7 @@ const colors = {
     500: '#DECBB3',
     400: '#E6D8C6',
     300: '#EEE5D9',
-    200: '#F7F2EC',
+    200: '#ffffff',
   },
 }
 const Button = {

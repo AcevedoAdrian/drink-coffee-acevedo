@@ -37,11 +37,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <div className="card-add">
       <div className="item-count-container">
-        <IconButton aria-label='Search database' color="marron.900" bg="marron.200" onClick={HandleIncrease} icon={<IoIosAddCircleOutline />} />
-
-        <input type="number" value={amount} onChange={handleChange} />
 
         <IconButton aria-label='Search database' color="marron.900" bg="marron.200" onClick={HandleDecrease} icon={<IoIosRemoveCircleOutline />} />
+        <input type="number" value={amount} onChange={handleChange} />
+        <IconButton aria-label='Search database' color="marron.900" bg="marron.200" onClick={HandleIncrease} icon={<IoIosAddCircleOutline />} />
+
       </div>
 
       <Button colorScheme='brand' leftIcon={<BsCartPlus />} variant='solid' onClick={stock > 0 ? HandlerAdd : null} disabled={stock > 0 ? false : true} >

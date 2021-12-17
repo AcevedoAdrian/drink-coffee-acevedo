@@ -1,8 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
-import { Button } from '@chakra-ui/react';
-import { Alert, AlertIcon, Stack } from '@chakra-ui/react'
+import { Button, Alert, AlertIcon, Stack, Image } from '@chakra-ui/react'
 import './ItemDetail.css';
 import { CartConetext } from '../../context/CartContext'
 
@@ -44,13 +43,15 @@ const ItemDetail = ({ product }) => {
     <div className="product-detail">
       <div className='product-container'>
         <div className='img-container'>
-          <img src={img} alt="" />
+          <Image boxSize='300px'
+            objectFit='cover' src={img} alt="" />
         </div>
         <div className="product-detail-info">
           <h3>{brand}</h3>
-          <span>{category}</span>
-          <span>{weight}g</span>
-          <h5>${precie}</h5>
+          <span>Categoria: {category}</span>
+          <span>Peso: {weight}g</span>
+          <span>Precio: ${precie}</span>
+          <span>Stock: {stock}</span>
           <p>{description}</p>
           {isBuyButton ?
             <ItemCount stock={stock} initial={1} onAdd={onAdd} />

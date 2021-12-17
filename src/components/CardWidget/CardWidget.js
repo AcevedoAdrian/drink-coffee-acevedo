@@ -16,7 +16,7 @@ const CardWidget = () => {
   return (
     <div className="card-widget">
       <Link to='/cart'>
-        {getTotalItems() > 0 &&
+        {(getTotalItems() > 0) &&
           <Badge variant='solid' colorScheme='green'>{getTotalItems()}</Badge>}
         <Icon as={BsCart3} w={6} h={6} color='marron.200' />
       </Link>

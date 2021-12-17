@@ -8,10 +8,7 @@
   align-items: center;
   justify-items: center;
 }
-.product-container img{
-  width: 30%;
-  height: 15%;
-}
+
 .product-detail-info {
   display: flex;
   flex-direction: column;
@@ -22,10 +19,8 @@
 }
 .product-detail-info h3{
   font-size: 3rem;
-  font-weight: bold;
   margin: 0;
 }
 .product-detail-info span{
   font-size: 1rem;
-  font-weight: bold;
 }

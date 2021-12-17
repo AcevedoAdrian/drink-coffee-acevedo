@@ -4,7 +4,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { Spinner } from '@chakra-ui/react';
 // FIREBASE
 import db from '../../firebase/firebaseConfig'
-import { collection, query, getDocs } from 'firebase/firestore';
+import { collection, query, getDocs, where, documentId } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
 
@@ -12,35 +12,22 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const { id } = useParams();
 
-  // const getItem = new Promise((resolve, reject) => {
-  //   // setTimeout(() => {
-  //   //   const respuesta = fetch(`https://api.punkapi.com/v2/beers/`)
-  //   //     .then(response => response.json())
-  //   //     .then(data => (data)
-  //   //     ).catch(error => error)
-
-  //   //   respuesta ? resolve(respuesta) : reject("error")
-  //   // }, 2000)
-
-  // })
-
   const getItem = async (id) => {
-    const response = query(collection(db, 'products'));
+    const response = query(collection(db, 'products'),
+      where(documentId(), '==', id)
+    );
     const items = [];
     const querySnapshot = await getDocs(response);
     querySnapshot.forEach((doc) => {
-      if (doc.id === id) {
-        items.push({ ...doc.data(), id: doc.id });
-      }
-
+      items.push({ ...doc.data(), id: doc.id });
     });
-    setProduct(items);
+    console.log(items);
+    setProduct(items[0]);
     setIsLoading(false);
   };
 
   useEffect(() => {
     getItem(id);
-
   }, [id])
 
 
@@ -48,7 +35,7 @@ const ItemDetailContainer = () => {
     <div className="container-prorduct-detail">
       {isLoading
         ? <Spinner size='xl' thickness='4px' />
-        : <ItemDetail product={product[0]} />}
+        : <ItemDetail product={product} />}
     </div>
   )
 }
