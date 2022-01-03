@@ -1,21 +1,21 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
 import { BsCartPlus } from "react-icons/bs";
-import { IconButton } from '@chakra-ui/react'
+import { IconButton, Text } from '@chakra-ui/react'
 import { IoIosRemoveCircleOutline, IoIosAddCircleOutline } from "react-icons/io"
 const ItemCount = ({ stock, initial, onAdd }) => {
 
   // State initialization
   const [amount, setAmount] = React.useState(initial);
 
-  //  Listen to the changes in the input
-  const handleChange = (e) => {
-    const valueInputCant = e.target.value;
-    if (valueInputCant <= stock && valueInputCant >= 0) {
-      setAmount(valueInputCant);
-    }
-    e.target.value = amount;
-  }
+  // //  Listen to the changes in the input
+  // const handleChange = (e) => {
+  //   const valueInputCant = e.target.value;
+  //   if (valueInputCant <= stock && valueInputCant >= 0) {
+  //     setAmount(valueInputCant);
+  //   }
+  //   e.target.value = amount;
+  // }
 
   // To decrement the number of selected products
   const HandleDecrease = () => {
@@ -39,7 +39,8 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       <div className="item-count-container">
 
         <IconButton aria-label='Search database' color="marron.900" bg="marron.200" onClick={HandleDecrease} icon={<IoIosRemoveCircleOutline />} />
-        <input type="number" value={amount} onChange={handleChange} />
+        {/* <input type="number" value={amount} onChange={handleChange} /> */}
+        <Text fontSize='30px' as='p' color='marron.900'>{amount}</Text>
         <IconButton aria-label='Search database' color="marron.900" bg="marron.200" onClick={HandleIncrease} icon={<IoIosAddCircleOutline />} />
 
       </div>

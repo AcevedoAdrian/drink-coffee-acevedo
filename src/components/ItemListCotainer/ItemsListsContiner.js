@@ -7,12 +7,12 @@ import { useParams } from 'react-router';
 import { Spinner } from '@chakra-ui/react';
 // FIREBASE
 import db from '../../firebase/firebaseConfig'
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs, limit } from 'firebase/firestore';
 // Estilos
 import './ItemsListsContiner.css';
 
 
-const ItemsListsContiner = ({ title }) => {
+const ItemsListsContiner = ({ title, styleRender }) => {
 
   // Estados
   const [products, setProducts] = useState([]);
@@ -43,16 +43,30 @@ const ItemsListsContiner = ({ title }) => {
     });
     setProducts(items);
   };
+  // Metodo para obtener top 5 de productos 
+  const getProductsTop5 = async (category) => {
+    const response = query(collection(db, 'products'), limit(3));
+    const items = [];
+    const querySnapshot = await getDocs(response);
+    querySnapshot.forEach((doc) => {
+      items.push({ ...doc.data(), id: doc.id });
+    });
+    setProducts(items);
+  };
 
   // UseEffect para obtener los productos
   useEffect(() => {
-    if (category) {
+    setIsLoading(true);
+    if (styleRender === 'top') {
+      getProductsTop5()
+    } else if (styleRender === 'category') {
       getProductsCategory(category);
-    } else {
+    } else if (styleRender === 'all') {
       getAllProducts();
     }
-    setIsLoading(false);
-  }, [category]);
+    setTimeout(() => { setIsLoading(false); }, 2000)
+
+  }, [styleRender, category]);
 
 
   return (
@@ -60,7 +74,7 @@ const ItemsListsContiner = ({ title }) => {
       <div className="container">
         <h2 className='h2-items-lists' >{title} {category}</h2>
         {isLoading
-          ? <Spinner size='xl' thickness='4px' />
+          ? <Spinner size='xl' thickness='4px' mt='40px' />
           : <ItemList products={products} />}
       </div>
     </section>

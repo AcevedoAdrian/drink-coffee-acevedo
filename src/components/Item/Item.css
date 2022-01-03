@@ -27,7 +27,13 @@
 }
 .item-count-container{
 	margin: 1rem 0 ;	
+	display: flex;
+	flex-direction: row;
 }
+.item-count-container p{
+	margin: 0 2rem;
+}
+
 
 .btn-card-add{
 		font-size: 1rem;

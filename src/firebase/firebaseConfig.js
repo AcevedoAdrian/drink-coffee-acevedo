@@ -4,14 +4,13 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAH58410kL7xLllRNLRbSYWxn8UqxVbKlY",
-  authDomain: "drink-coffee-web.firebaseapp.com",
-  projectId: "drink-coffee-web",
-  storageBucket: "drink-coffee-web.appspot.com",
-  messagingSenderId: "528972108036",
-  appId: "1:528972108036:web:75ce2998ec41d358ae0051"
-};
-
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID
+}
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

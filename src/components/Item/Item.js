@@ -6,7 +6,7 @@ import { Button, Box, Divider, Text } from '@chakra-ui/react'
 import './Item.css'
 
 const Item = (props) => {
-  const { id, brand, region, img, precie } = props.product;
+  const { id, brand, country, region, img, precie } = props.product;
 
   return (
     <Box className="card" id={id} borderWidth='1px' borderRadius='lg' overflow='hidden'>
@@ -16,11 +16,8 @@ const Item = (props) => {
       <Divider />
       <div className="card-texts">
         <Text fontSize='lg' as='i'>{brand}</Text>
-        <Text fontSize='md' as='i'>{region}</Text>
+        <Text fontSize='md' as='i'>{`${country} - ${region}`}</Text>
         <Text fontSize='xl'>{`$ ${precie}`}</Text>
-        {/* <h3>{brand}</h3> */}
-        {/* <span>{region}</span> */}
-        {/* <span >{`$ ${precie}`}</span> */}
         <Link to={`/item/${id}`} >
           <Button colorScheme='brand' mt='6' >
             Ver Producto

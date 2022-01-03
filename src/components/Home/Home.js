@@ -1,8 +1,10 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/layout';
+import { Box, Flex, Heading, Text, Button, Stack, Center } from '@chakra-ui/react';
 import React from 'react';
-import './Home.css'
-import bgImage from '../../assets/img/home.jpg'
-
+import ItemsListsContiner from '../ItemListCotainer/ItemsListsContiner';
+import './Home.css';
+import bgImage from '../../assets/img/home.jpg';
+import { GiCoffeeBeans } from "react-icons/gi";
+import { Link } from 'react-router-dom';
 const Home = ({ title }) => {
 
 
@@ -47,11 +49,25 @@ const Home = ({ title }) => {
             textAlign="justify"
           >
 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt asperiores nihil, reprehenderit, unde repellat quasi repudiandae architecto cumque tempora labore, magni quo accusantium ab quia distinctio vero laboriosam molestias vitae!r
+            Invertimos en conocimiento e innovación, creamos relaciones de beneficio mutuo con los productores de café (Comercio Directo), intentamos y controlamos obsesivamente cada grano de café, tostamos con arte modelando curvas de tueste ideales para cada café (Tostado Artesano) ...!
           </Text>
         </Flex>
 
       </Flex>
+
+      <ItemsListsContiner title="Algunos de Nuestros Productos" styleRender="top" />
+      <Flex flexDir='column' alignContent='center' position='absolute' top='2000px' left='45vw'>
+        <Center >
+          <Stack direction='row' spacing={4} size='xl'>
+            <Link to="/products">
+              <Button rightIcon={<GiCoffeeBeans />} colorScheme='marron' variant='outline' size='lg'>
+                Ver más Productos
+              </Button>
+            </Link>
+          </Stack>
+        </Center>
+      </Flex>
+
     </Box>
   )
 }
