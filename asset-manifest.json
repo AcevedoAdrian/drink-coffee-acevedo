@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "drink-coffee-acevedo/static/css/main.81423bfe.chunk.css",
-    "main.js": "drink-coffee-acevedo/static/js/main.bb9101cb.chunk.js",
-    "main.js.map": "drink-coffee-acevedo/static/js/main.bb9101cb.chunk.js.map",
+    "main.js": "drink-coffee-acevedo/static/js/main.005b56f6.chunk.js",
+    "main.js.map": "drink-coffee-acevedo/static/js/main.005b56f6.chunk.js.map",
     "runtime-main.js": "drink-coffee-acevedo/static/js/runtime-main.8acc4be1.js",
     "runtime-main.js.map": "drink-coffee-acevedo/static/js/runtime-main.8acc4be1.js.map",
     "static/js/2.7dbb5a43.chunk.js": "drink-coffee-acevedo/static/js/2.7dbb5a43.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8acc4be1.js",
     "static/js/2.7dbb5a43.chunk.js",
     "static/css/main.81423bfe.chunk.css",
-    "static/js/main.bb9101cb.chunk.js"
+    "static/js/main.005b56f6.chunk.js"
   ]
 }
