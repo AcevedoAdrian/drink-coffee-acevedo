@@ -4,7 +4,8 @@ Esta es una web hecha en react, la cual lista los productos de tipo café, los c
 
 ## Screenshots del proyecto
 
-coderApp.gif
+![drink-coffee](https://user-images.githubusercontent.com/6349622/147896091-e4d6254f-3021-4837-8f21-245b6c0297ef.gif)
+
 
 ## Instrucciones de instalación y configuración
 
