@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/drink-coffee-acevedo/static/css/main.5d02ee5b.chunk.css",
+    "main.js": "/drink-coffee-acevedo/static/js/main.53d00c1c.chunk.js",
+    "main.js.map": "/drink-coffee-acevedo/static/js/main.53d00c1c.chunk.js.map",
+    "runtime-main.js": "/drink-coffee-acevedo/static/js/runtime-main.69982842.js",
+    "runtime-main.js.map": "/drink-coffee-acevedo/static/js/runtime-main.69982842.js.map",
+    "static/js/2.74930d63.chunk.js": "/drink-coffee-acevedo/static/js/2.74930d63.chunk.js",
+    "static/js/2.74930d63.chunk.js.map": "/drink-coffee-acevedo/static/js/2.74930d63.chunk.js.map",
+    "index.html": "/drink-coffee-acevedo/index.html",
+    "static/css/main.5d02ee5b.chunk.css.map": "/drink-coffee-acevedo/static/css/main.5d02ee5b.chunk.css.map",
+    "static/js/2.74930d63.chunk.js.LICENSE.txt": "/drink-coffee-acevedo/static/js/2.74930d63.chunk.js.LICENSE.txt",
+    "static/media/Home.css": "/drink-coffee-acevedo/static/media/home.7be8f2b2.jpg",
+    "static/media/logo.4ceed3de.svg": "/drink-coffee-acevedo/static/media/logo.4ceed3de.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69982842.js",
+    "static/js/2.74930d63.chunk.js",
+    "static/css/main.5d02ee5b.chunk.css",
+    "static/js/main.53d00c1c.chunk.js"
+  ]
+}
