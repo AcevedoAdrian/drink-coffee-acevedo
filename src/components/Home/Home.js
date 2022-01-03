@@ -48,8 +48,7 @@ const Home = ({ title }) => {
             letterSpacing="1px"
             textAlign="justify"
           >
-
-            Invertimos en conocimiento e innovación, creamos relaciones de beneficio mutuo con los productores de café (Comercio Directo), intentamos y controlamos obsesivamente cada grano de café, tostamos con arte modelando curvas de tueste ideales para cada café (Tostado Artesano) ...!
+            Invertimos en conocimiento e innovación, creamos relaciones de beneficio mutuo con los productores de café (Comercio Directo), intentamos y controlamos obsesivamente cada grano de café, tostamos con arte modelando curvas de tueste ideales para cada café (Tostado Artesano).
           </Text>
         </Flex>
 
