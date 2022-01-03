@@ -4,7 +4,6 @@ Esta es una web hecha en react, la cual lista los productos de tipo café, los c
 
 ## Screenshots del proyecto
 
-coderApp.gif
 
 ## Instrucciones de instalación y configuración
 
@@ -32,7 +31,7 @@ Entre las librerias destacadas que utilice para desarrollar esta app estan:
 -chakra-ui/react: para facilitan el trabajo a la hora de obtener un diseño responsive y esteticamente.
 -React-Icons: iconos en general.
 -Firebase: Para poder obtener, almacenar tanto los productos asi como tambien guardar las ordenes de compra.
-
+-gh-pages: Para poder subir la aplicacion de react a github Page con dominio
 ## Dependencias
 
 "chakra-ui/react": "^1.7.2",
@@ -41,5 +40,4 @@ Entre las librerias destacadas que utilice para desarrollar esta app estan:
 "react-dom": "^17.0.2",
 "react-icons": "^4.3.1",
 "react-router-dom": "^6.0.2"
-
-## Objetivo
+"gh-pages": "^3.2.3",
