@@ -4,6 +4,7 @@ Esta es una web hecha en react, la cual lista los productos de tipo café, los c
 
 ## Screenshots del proyecto
 
+![drink-coffee](https://user-images.githubusercontent.com/6349622/147896091-e4d6254f-3021-4837-8f21-245b6c0297ef.gif)
 
 ## Instrucciones de instalación y configuración
 
@@ -32,6 +33,7 @@ Entre las librerias destacadas que utilice para desarrollar esta app estan:
 -React-Icons: iconos en general.
 -Firebase: Para poder obtener, almacenar tanto los productos asi como tambien guardar las ordenes de compra.
 -gh-pages: Para poder subir la aplicacion de react a github Page con dominio
+
 ## Dependencias
 
 "chakra-ui/react": "^1.7.2",
